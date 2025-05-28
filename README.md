@@ -25,12 +25,12 @@ It predicts mortality based on various factors like smoking prevalence, tobacco 
 │-- 📜 label_encoders.pkl  # Encoded Categorical Data  
 │-- 📜 Tobacco_Mortality_Report.pdf  # Generated Report  
 │-- 📜 requirements.txt  # Dependencies  
-│-- 📁 data  
-│   │-- admissions.csv  
-│   │-- fatalities.csv  
-│   │-- metrics.csv  
-│   │-- prescriptions.csv  
-│   │-- smokers.csv  
+│ dataset  
+│-- admissions.csv  
+│-- fatalities.csv  
+│-- metrics.csv  
+│-- prescriptions.csv  
+│-- smokers.csv  
 ```
 
 ---
@@ -85,27 +85,10 @@ To generate the report, run:
 ```bash
 python generate_report.py
 ```
-📌 **Check `Tobacco_Mortality_Report.pdf` for detailed analysis.**
+**Check `Tobacco_Mortality_Report.pdf` for detailed analysis.**
 
 ---
 
 ## ⚡ **Future Improvements**
 ✅ Improve model accuracy with hyperparameter tuning  
 ✅ Add more advanced ML models like **XGBoost, LSTM** 
-
----
-
-## 🤝 **Contributions**
-Want to contribute? Follow these steps:
-1. **Fork the Repository**  
-2. **Create a Feature Branch:** `git checkout -b feature-name`  
-3. **Commit Changes & Push:** `git push origin feature-name`  
-4. **Create a Pull Request (PR)**  
-
----
-
-## 📧 **Contact & Support**
-🔗 **GitHub:** [imabhnv](https://github.com/imabhnv)  
-📩 **Email:** varshneyabhinav66@gmail.com  
-
-📌 **Star ⭐ the repo if you found this useful!** 🚀  
