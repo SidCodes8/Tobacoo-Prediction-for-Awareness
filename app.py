@@ -59,16 +59,17 @@ try:
         "16 and Over", "16-24", "25-34", "35-49", "50-59", "60 and Over"
     ]
 
-    input_data = np.array([[year, icd10_code_encoded, icd10_diagnosis_encoded, diagnosis_type_encoded, 
-                            metric_encoded, sex_encoded, tobacco_price, retail_price, affordability,
-                            household_expenditure, household_total,  
-                            age_16_over, age_16_24, age_25_34, age_35_49, age_50_59, age_60_over]]).astype(float)
+    input_df = pd.DataFrame([[year, icd10_code_encoded, icd10_diagnosis_encoded, diagnosis_type_encoded,
+                              metric_encoded, sex_encoded, tobacco_price, retail_price, affordability,
+                              household_expenditure, household_total,
+                              age_16_over, age_16_24, age_25_34, age_35_49, age_50_59, age_60_over]],
+                            columns=feature_order).astype(float)
 
-    if input_data.shape[1] != len(feature_order):
-        st.error(f"⚠ Feature mismatch: Model expects {len(feature_order)} features, but {input_data.shape[1]} provided.")
+    if input_df.shape[1] != len(feature_order):
+        st.error(f"⚠ Feature mismatch: Model expects {len(feature_order)} features, but {input_df.shape[1]} provided.")
     else:
         if st.button("🔍 Predict Mortality"):
-            prediction = model.predict(input_data)
+            prediction = model.predict(input_df)
             st.success(f"📈 Predicted Mortality: {int(prediction[0])}")
 
 except KeyError as e:
